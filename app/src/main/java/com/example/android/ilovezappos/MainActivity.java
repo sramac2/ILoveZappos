@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         seekBarX.setOnSeekBarChangeListener(this);
 
         seekBarY = findViewById(R.id.seekBar2);
+        //seekBarX.setMax(1000);
         seekBarY.setMax(10000);
         seekBarY.setOnSeekBarChangeListener(this);
 
@@ -310,6 +311,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                     min=price;
                 }
             }
+            seekBarX.setMax(bitcoinValues.size()+50);
             //Setting the maximum value of Y axis
             yAxis.setAxisMaximum(max+5);
             //Setting the minimum value of Y axis
@@ -491,7 +493,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     }
 
     private void handleBitcoinBidAskResults(OrderBook orderBook) {
-
 
         orderBookValues = new ArrayList<>();
         orderBookValues.clear();
